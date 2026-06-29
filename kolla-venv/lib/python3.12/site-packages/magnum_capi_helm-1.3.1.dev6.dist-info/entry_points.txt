@@ -1,0 +1,2 @@
+[magnum.drivers]
+k8s_capi_helm_v1 = magnum_capi_helm.driver:Driver

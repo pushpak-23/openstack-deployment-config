@@ -1,0 +1,82 @@
+[console_scripts]
+tacker = tackerclient.shell:main
+
+[openstack.cli.extension]
+tackerclient = tackerclient.osc.plugin
+
+[openstack.tackerclient.v1]
+vim_delete = tackerclient.osc.v1.nfvo.vim:DeleteVIM
+vim_list = tackerclient.osc.v1.nfvo.vim:ListVIM
+vim_register = tackerclient.osc.v1.nfvo.vim:CreateVIM
+vim_set = tackerclient.osc.v1.nfvo.vim:UpdateVIM
+vim_show = tackerclient.osc.v1.nfvo.vim:ShowVIM
+vnf_package_artifact_download = tackerclient.osc.v1.vnfpkgm.vnf_package:DownloadVnfPackageArtifact
+vnf_package_create = tackerclient.osc.v1.vnfpkgm.vnf_package:CreateVnfPackage
+vnf_package_delete = tackerclient.osc.v1.vnfpkgm.vnf_package:DeleteVnfPackage
+vnf_package_download = tackerclient.osc.v1.vnfpkgm.vnf_package:DownloadVnfPackage
+vnf_package_list = tackerclient.osc.v1.vnfpkgm.vnf_package:ListVnfPackage
+vnf_package_show = tackerclient.osc.v1.vnfpkgm.vnf_package:ShowVnfPackage
+vnf_package_update = tackerclient.osc.v1.vnfpkgm.vnf_package:UpdateVnfPackage
+vnf_package_upload = tackerclient.osc.v1.vnfpkgm.vnf_package:UploadVnfPackage
+vnflcm_change-ext-conn = tackerclient.osc.v1.vnflcm.vnflcm:ChangeExtConnVnfLcm
+vnflcm_create = tackerclient.osc.v1.vnflcm.vnflcm:CreateVnfLcm
+vnflcm_delete = tackerclient.osc.v1.vnflcm.vnflcm:DeleteVnfLcm
+vnflcm_heal = tackerclient.osc.v1.vnflcm.vnflcm:HealVnfLcm
+vnflcm_instantiate = tackerclient.osc.v1.vnflcm.vnflcm:InstantiateVnfLcm
+vnflcm_list = tackerclient.osc.v1.vnflcm.vnflcm:ListVnfLcm
+vnflcm_op_cancel = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:CancelVnfLcmOp
+vnflcm_op_fail = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:FailVnfLcmOp
+vnflcm_op_list = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:ListVnfLcmOp
+vnflcm_op_retry = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:RetryVnfLcmOp
+vnflcm_op_rollback = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:RollbackVnfLcmOp
+vnflcm_op_show = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:ShowVnfLcmOp
+vnflcm_scale = tackerclient.osc.v1.vnflcm.vnflcm:ScaleVnfLcm
+vnflcm_show = tackerclient.osc.v1.vnflcm.vnflcm:ShowVnfLcm
+vnflcm_subsc_create = tackerclient.osc.v1.vnflcm.vnflcm_subsc:CreateLccnSubscription
+vnflcm_subsc_delete = tackerclient.osc.v1.vnflcm.vnflcm_subsc:DeleteLccnSubscription
+vnflcm_subsc_list = tackerclient.osc.v1.vnflcm.vnflcm_subsc:ListLccnSubscription
+vnflcm_subsc_show = tackerclient.osc.v1.vnflcm.vnflcm_subsc:ShowLccnSubscription
+vnflcm_terminate = tackerclient.osc.v1.vnflcm.vnflcm:TerminateVnfLcm
+vnflcm_update = tackerclient.osc.v1.vnflcm.vnflcm:UpdateVnfLcm
+vnflcm_versions = tackerclient.osc.common.vnflcm.vnflcm_versions:VnfLcmVersions
+
+[openstack.tackerclient.v2]
+vnffm_alarm_list = tackerclient.osc.v2.vnffm.vnffm_alarm:ListVnfFmAlarm
+vnffm_alarm_show = tackerclient.osc.v2.vnffm.vnffm_alarm:ShowVnfFmAlarm
+vnffm_alarm_update = tackerclient.osc.v2.vnffm.vnffm_alarm:UpdateVnfFmAlarm
+vnffm_sub_create = tackerclient.osc.v2.vnffm.vnffm_sub:CreateVnfFmSub
+vnffm_sub_delete = tackerclient.osc.v2.vnffm.vnffm_sub:DeleteVnfFmSub
+vnffm_sub_list = tackerclient.osc.v2.vnffm.vnffm_sub:ListVnfFmSub
+vnffm_sub_show = tackerclient.osc.v2.vnffm.vnffm_sub:ShowVnfFmSub
+vnflcm_change-ext-conn = tackerclient.osc.v1.vnflcm.vnflcm:ChangeExtConnVnfLcm
+vnflcm_change-vnfpkg = tackerclient.osc.v1.vnflcm.vnflcm:ChangeVnfPkgVnfLcm
+vnflcm_create = tackerclient.osc.v1.vnflcm.vnflcm:CreateVnfLcm
+vnflcm_delete = tackerclient.osc.v1.vnflcm.vnflcm:DeleteVnfLcm
+vnflcm_heal = tackerclient.osc.v1.vnflcm.vnflcm:HealVnfLcm
+vnflcm_instantiate = tackerclient.osc.v1.vnflcm.vnflcm:InstantiateVnfLcm
+vnflcm_list = tackerclient.osc.v1.vnflcm.vnflcm:ListVnfLcm
+vnflcm_op_fail = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:FailVnfLcmOp
+vnflcm_op_list = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:ListVnfLcmOp
+vnflcm_op_retry = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:RetryVnfLcmOp
+vnflcm_op_rollback = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:RollbackVnfLcmOp
+vnflcm_op_show = tackerclient.osc.v1.vnflcm.vnflcm_op_occs:ShowVnfLcmOp
+vnflcm_scale = tackerclient.osc.v1.vnflcm.vnflcm:ScaleVnfLcm
+vnflcm_show = tackerclient.osc.v1.vnflcm.vnflcm:ShowVnfLcm
+vnflcm_subsc_create = tackerclient.osc.v1.vnflcm.vnflcm_subsc:CreateLccnSubscription
+vnflcm_subsc_delete = tackerclient.osc.v1.vnflcm.vnflcm_subsc:DeleteLccnSubscription
+vnflcm_subsc_list = tackerclient.osc.v1.vnflcm.vnflcm_subsc:ListLccnSubscription
+vnflcm_subsc_show = tackerclient.osc.v1.vnflcm.vnflcm_subsc:ShowLccnSubscription
+vnflcm_terminate = tackerclient.osc.v1.vnflcm.vnflcm:TerminateVnfLcm
+vnflcm_update = tackerclient.osc.v1.vnflcm.vnflcm:UpdateVnfLcm
+vnflcm_versions = tackerclient.osc.common.vnflcm.vnflcm_versions:VnfLcmVersions
+vnfpm_job_create = tackerclient.osc.v2.vnfpm.vnfpm_job:CreateVnfPmJob
+vnfpm_job_delete = tackerclient.osc.v2.vnfpm.vnfpm_job:DeleteVnfPmJob
+vnfpm_job_list = tackerclient.osc.v2.vnfpm.vnfpm_job:ListVnfPmJob
+vnfpm_job_show = tackerclient.osc.v2.vnfpm.vnfpm_job:ShowVnfPmJob
+vnfpm_job_update = tackerclient.osc.v2.vnfpm.vnfpm_job:UpdateVnfPmJob
+vnfpm_report_show = tackerclient.osc.v2.vnfpm.vnfpm_report:ShowVnfPmReport
+vnfpm_threshold_create = tackerclient.osc.v2.vnfpm.vnfpm_threshold:CreateVnfPmThreshold
+vnfpm_threshold_delete = tackerclient.osc.v2.vnfpm.vnfpm_threshold:DeleteVnfPmThreshold
+vnfpm_threshold_list = tackerclient.osc.v2.vnfpm.vnfpm_threshold:ListVnfPmThreshold
+vnfpm_threshold_show = tackerclient.osc.v2.vnfpm.vnfpm_threshold:ShowVnfPmThreshold
+vnfpm_threshold_update = tackerclient.osc.v2.vnfpm.vnfpm_threshold:UpdateVnfPmThreshold

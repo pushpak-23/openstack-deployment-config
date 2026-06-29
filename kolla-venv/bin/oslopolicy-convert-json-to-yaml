@@ -1,0 +1,7 @@
+#!/root/openstack_deployment/kolla-venv/bin/python3
+import sys
+from oslo_policy.generator import convert_policy_json_to_yaml
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(convert_policy_json_to_yaml())

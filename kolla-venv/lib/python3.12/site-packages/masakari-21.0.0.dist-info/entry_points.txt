@@ -1,0 +1,40 @@
+[console_scripts]
+masakari-api = masakari.cmd.api:main
+masakari-engine = masakari.cmd.engine:main
+masakari-manage = masakari.cmd.manage:main
+masakari-status = masakari.cmd.status:main
+
+[masakari.api.v1.extensions]
+extension_info = masakari.api.openstack.ha.extension_info:ExtensionInfo
+hosts = masakari.api.openstack.ha.hosts:Hosts
+notifications = masakari.api.openstack.ha.notifications:Notifications
+segments = masakari.api.openstack.ha.segments:Segments
+versions = masakari.api.openstack.ha.versionsV1:Versions
+vmoves = masakari.api.openstack.ha.vmoves:VMoves
+
+[masakari.driver]
+taskflow_driver = masakari.engine.drivers.taskflow:TaskFlowDriver
+
+[masakari.task_flow.tasks]
+confirm_compute_node_disabled_task = masakari.engine.drivers.taskflow.process_failure:ConfirmComputeNodeDisabledTask
+confirm_instance_active_task = masakari.engine.drivers.taskflow.instance_failure:ConfirmInstanceActiveTask
+disable_compute_node_task = masakari.engine.drivers.taskflow.process_failure:DisableComputeNodeTask
+disable_compute_service_task = masakari.engine.drivers.taskflow.host_failure:DisableComputeServiceTask
+evacuate_instances_task = masakari.engine.drivers.taskflow.host_failure:EvacuateInstancesTask
+no_op = masakari.engine.drivers.taskflow.no_op:Noop
+prepare_HA_enabled_instances_task = masakari.engine.drivers.taskflow.host_failure:PrepareHAEnabledInstancesTask
+start_instance_task = masakari.engine.drivers.taskflow.instance_failure:StartInstanceTask
+stop_instance_task = masakari.engine.drivers.taskflow.instance_failure:StopInstanceTask
+
+[oslo.config.opts]
+customized_recovery_flow_opts = masakari.conf.opts:list_recovery_workflow_opts
+masakari.conf = masakari.conf.opts:list_opts
+
+[oslo.config.opts.defaults]
+masakari.api = masakari.common.config:set_lib_defaults
+
+[oslo.policy.enforcer]
+masakari = masakari.policy:get_enforcer
+
+[oslo.policy.policies]
+masakari = masakari.policies:list_rules

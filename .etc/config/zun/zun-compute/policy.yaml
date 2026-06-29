@@ -1,0 +1,10 @@
+"context_is_admin": "role:admin"
+"admin_or_owner": "is_admin:True or project_id:%(project_id)s"
+"member": "role:member"
+
+"container:create": "rule:admin_or_owner or rule:member"
+"container:delete": "rule:admin_or_owner"
+"container:get_one": "rule:admin_or_owner or rule:member"
+"container:get_all": "rule:admin_or_owner or rule:member"
+"container:start": "rule:admin_or_owner"
+"container:stop": "rule:admin_or_owner"

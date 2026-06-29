@@ -1,0 +1,3 @@
+container:create: "role:member or role:admin"
+container:start: "role:member or role:admin"
+container:delete: "role:member or role:admin"
