@@ -1,0 +1,31 @@
+service_type: rgw
+service_id: swift-rgw
+service_name: rgw.swift-rgw
+placement:
+  count: 3
+spec:
+  # RGW Frontend Configuration
+  rgw_frontend_port: 7480
+  rgw_frontend_type: beast
+
+  # Keystone Integration Settings
+  rgw_s3_auth_use_keystone: true
+  rgw_keystone_api_version: 3
+  rgw_keystone_url: "https://192.168.101.10:5000"
+  rgw_keystone_admin_user: "ceph_rgw"
+  rgw_keystone_admin_password: "d2kNhUg3tL6r8u0XX5uHOUU846jYkw5G1NvlGJHp"
+  # Security Note: Consider rgw_keystone_admin_password_path for production
+  rgw_keystone_admin_project: service
+  rgw_keystone_admin_domain: default
+  rgw_keystone_implicit_tenants: true
+  rgw_keystone_accepted_admin_roles: "admin, ResellerAdmin"
+  rgw_keystone_accepted_roles: "_member_, member, admin, ResellerAdmin"
+  rgw_keystone_verify_ssl: false
+  rgw_verify_ssl: false
+
+  # API and Feature Enabling
+  rgw_enable_apis: "s3, swift, swift_auth, admin"
+  rgw_content_length_compat: true
+  rgw_enforce_swift_acls: true
+  rgw_swift_account_in_url: true
+  rgw_swift_versioning_enabled: true

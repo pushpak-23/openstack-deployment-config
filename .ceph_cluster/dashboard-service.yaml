@@ -1,0 +1,12 @@
+service_type: ingress
+service_id: mgmt-gw-ingress  # Unique ID for the service
+placement:
+  hosts:
+    - compute12
+    - compute13
+    - compute14
+spec:
+  backend_service: mgr  # The backend service for the ingress
+  virtual_ip: 192.168.109.110/24  # Virtual IP for the ingress
+  frontend_port: 443  # Default HTTPS port for dashboard (even without SSL)
+  monitor_port: 1967

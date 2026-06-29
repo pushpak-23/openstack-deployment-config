@@ -1,0 +1,12 @@
+service_type: ingress
+service_id: mgmt-gw-ingress # You can choose any unique ID here
+placement:
+  hosts:
+    - compute01
+    - compute02
+    - compute03
+spec:
+  backend_service: mgmt-gateway
+  virtual_ip: 192.168.109.120/24 # Replace with your desired VIP and CIDR
+  frontend_port: 443 # Default HTTPS port for dashboard
+  monitor_port: 9090

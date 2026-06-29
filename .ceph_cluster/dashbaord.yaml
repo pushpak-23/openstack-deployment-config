@@ -1,0 +1,13 @@
+service_type: ingress
+service_id: dashboard
+placement:
+  hosts:
+    - compute12
+    - compute13
+    - compute14
+spec:
+  backend_service: dashboard
+  virtual_ip: 192.168.109.110/24  # Your desired single access IP
+  frontend_port: 443        # Port to access the dashboard
+  monitor_port: 1967
+#  enable_https: true

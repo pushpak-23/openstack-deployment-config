@@ -1,0 +1,17 @@
+# Prepare Directory and Key
+mkdir -p /var/lib/ceph/aecb2e59-690f-11f0-90df-b026284f41a2/osd.38
+ceph auth get osd.38 -o /var/lib/ceph/aecb2e59-690f-11f0-90df-b026284f41a2/osd.38/keyring
+chown -R 167:167 /var/lib/ceph/aecb2e59-690f-11f0-90df-b026284f41a2/osd.38
+
+# Stop old container if stuck
+podman rm -f osd.38-manual 2>/dev/null
+
+# Start Manual Container
+podman run -d --privileged --net=host \
+  --name osd.38-manual \
+  -v /dev:/dev \
+  -v /etc/ceph:/etc/ceph \
+  -v /var/lib/ceph/aecb2e59-690f-11f0-90df-b026284f41a2/osd.38:/var/lib/ceph/osd/ceph-38 \
+  -v /var/log/ceph:/var/log/ceph \
+  quay.io/ceph/ceph:v19 \
+  ceph-osd -f --cluster ceph --id 38 --setuser ceph --setgroup ceph
